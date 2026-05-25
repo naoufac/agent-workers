@@ -1,0 +1,15 @@
+{
+  "id": "setup-webhook-monitoring",
+  "type": "github-pr-create",
+  "priority": "high",
+  "status": "pending",
+  "created_at": "2026-05-25T11:00:00Z",
+  "title": "Setup Webhook Monitoring and Cron",
+  "description": "Configure cron job to run webhook-server.py and agent-workers monitoring, deploy webhook URL to GitHub",
+  "repo": "naoufac/agent-workers",
+  "branch": "feat/monitoring",
+  "context": {
+    "body": "## Summary\nAdded webhook monitoring infrastructure and cron jobs.\n\n## Changes\n- Added webhook-server.py for GitHub PR events\n- Created validation pipeline for HTML/CSS\n- Built GitHub review service for PR comments\n- Added cron jobs for monitoring\n\n## Deployment\n- Webhook server: python webhook-server.py (port 8080)\n- Cron: */5 * * * * to monitor tasks/\n- GitHub webhook: http://server-ip:8080/webhook\n\n## Next Steps\n1. Deploy webhook server to production\n2. Configure GitHub webhook URL\n3. Test PR creation triggers review",
+    "draft": false
+  }
+}
