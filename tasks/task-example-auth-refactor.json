@@ -1,0 +1,15 @@
+{
+  "id": "task-example-auth-refactor",
+  "type": "claude-code",
+  "priority": "high",
+  "status": "pending",
+  "created_at": "2026-05-25T00:00:00Z",
+  "title": "Refactor authentication module",
+  "description": "Refactor the authentication module to use JWT tokens instead of sessions. Update all middleware and tests accordingly.",
+  "repo": "example/webapp",
+  "context": {
+    "workdir": "/root/repos/example/webapp",
+    "files": ["src/auth.py", "src/middleware.py", "tests/test_auth.py"],
+    "allowedTools": "Read,Edit,Write,Bash(python *),Bash(make test)"
+  }
+}

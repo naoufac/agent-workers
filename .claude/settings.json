@@ -1,0 +1,39 @@
+{
+  "permissions": {
+    "allow": [
+      "Read",
+      "Edit",
+      "Write",
+      "Bash(npm run *)",
+      "Bash(make *)",
+      "Bash(git *)",
+      "Bash(python *)",
+      "Bash(pip *)"
+    ],
+    "ask": [
+      "Bash(git push*)",
+      "Bash(git commit*)"
+    ],
+    "deny": [
+      "Bash(rm -rf *)",
+      "Read(.env)",
+      "Read(secrets/*)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write(*.py)",
+        "hooks": [
+          {"type": "command", "command": "ruff check --fix $CLAUDE_FILE_PATHS 2>/dev/null || true"}
+        ]
+      },
+      {
+        "matcher": "Write(*.ts)",
+        "hooks": [
+          {"type": "command", "command": "eslint --fix $CLAUDE_FILE_PATHS 2>/dev/null || true"}
+        ]
+      }
+    ]
+  }
+}

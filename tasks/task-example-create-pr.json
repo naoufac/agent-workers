@@ -1,0 +1,15 @@
+{
+  "id": "task-example-create-pr",
+  "type": "github-pr-create",
+  "priority": "high",
+  "status": "pending",
+  "created_at_at": "2026-05-25T00:00:00Z",
+  "title": "Create feature PR",
+  "description": "Create a pull request for the auth refactor feature",
+  "repo": "example/webapp",
+  "branch": "feat/jwt-authentication",
+  "context": {
+    "body": "## Summary\nRefactored authentication to use JWT tokens.\n\n## Changes\n- Added JWT token generation and validation\n- Updated middleware to verify tokens\n- Migrated tests\n\n## Test Plan\n- [x] Unit tests pass\n- [x] Integration tests pass",
+    "draft": false
+  }
+}
