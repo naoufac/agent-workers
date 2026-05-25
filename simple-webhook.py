@@ -12,6 +12,7 @@ import hashlib
 import os
 
 WEBHOOK_SECRET = os.getenv('GITHUB_WEBHOOK_SECRET', 'default-secret')
+WEBHOOK_PORT = int(os.getenv('WEBHOOK_PORT', '8081'))
 
 class WebhookHandler(BaseHTTPRequestHandler):
     def do_POST(self):
@@ -56,7 +57,7 @@ class WebhookHandler(BaseHTTPRequestHandler):
     def log_message(self, format, *args):
         """Log to file"""
         with open('/root/agent-workers/logs/webhook.log', 'a') as f:
-            f.write(f"[{format}] % args\n")
+            f.write(f"[{format}] {' '.join(str(a) for a in args)}\n")
     
     def handle_pr_event(self, data):
         """Handle pull request events"""
@@ -98,10 +99,11 @@ def run_server():
     """Run webhook server"""
     os.makedirs('/root/agent-workers/logs', exist_ok=True)
     
-    server_address = ('', 8080)
+    # Bind to 127.0.0.1 explicitly
+    server_address = ('127.0.0.1', WEBHOOK_PORT)
     httpd = HTTPServer(server_address, WebhookHandler)
     
-    print("Webhook server running on port 8080")
+    print(f"Webhook server running on port {WEBHOOK_PORT}")
     print("Log file: /root/agent-workers/logs/webhook.log")
     print("Press Ctrl+C to stop")
     
