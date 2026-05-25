@@ -1,0 +1,23 @@
+{
+  "id": "build-validation-pipeline",
+  "type": "claude-code",
+  "priority": "high",
+  "status": "pending",
+  "created_at": "2026-05-25T10:45:00Z",
+  "title": "Build HTML/CSS Validation Pipeline",
+  "description": "Create automated validation scripts that check HTML syntax, CSS validity, and test browser rendering locally before allowing merge.",
+  "repo": "naoufac/naples-agency",
+  "context": {
+    "files": [
+      "scripts/validate-html.py",
+      "scripts/validate-css.py",
+      "scripts/test-browser.py"
+    ],
+    "commands": [
+      "chmod +x scripts/*.py",
+      "scripts/validate-html.py naples-agency/",
+      "scripts/validate-css.py naples-agency/"
+    ],
+    "review_focus": "parsing, error handling, browser automation"
+  }
+}

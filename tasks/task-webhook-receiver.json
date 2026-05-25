@@ -1,0 +1,22 @@
+{
+  "id": "setup-github-webhook-receiver",
+  "type": "claude-code",
+  "priority": "high",
+  "status": "pending",
+  "created_at": "2026-05-25T10:45:00Z",
+  "title": "Create GitHub Webhook Receiver Server",
+  "description": "Build a Python Flask server that receives GitHub webhook events, validates signatures, and dispatches to Hermes workers for code review.",
+  "repo": "naoufac/naples-agency",
+  "context": {
+    "files": [
+      "webhook-server.py",
+      "requirements.txt",
+      "Dockerfile"
+    ],
+    "commands": [
+      "pip install -r requirements.txt",
+      "python webhook-server.py --port 8080"
+    ],
+    "review_focus": "security, authentication, event handling"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "id": "deploy-webhook-system",
+  "type": "github-pr-create",
+  "priority": "high",
+  "status": "pending",
+  "created_at": "2026-05-25T10:45:00Z",
+  "title": "Deploy Webhook System to Production",
+  "description": "Commit all webhook and validation code, create PR, test end-to-end with real GitHub webhook events.",
+  "repo": "naoufac/agent-workers",
+  "branch": "feat/webhook-review-system",
+  "context": {
+    "body": "## Summary\nImplemented GitHub webhook-based code review system.\n\n## Changes\n- Added webhook receiver server (Flask)\n- Created HTML/CSS validation pipeline\n- Integrated GitHub API for review comments\n- Added status check blocking\n\n## Test Plan\n- [x] Webhook receives PR events\n- [x] Validation pipeline catches broken CSS\n- [x] Review comments post to PR\n- [x] Merge blocked on failed reviews\n\n## Deployment\n- Webhook server running on port 8080\n- GitHub webhook configured\n- Ready for production use",
+    "draft": false
+  }
+}

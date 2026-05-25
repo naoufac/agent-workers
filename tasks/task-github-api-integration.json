@@ -1,0 +1,20 @@
+{
+  "id": "integrate-github-api",
+  "type": "claude-code",
+  "priority": "high",
+  "status": "pending",
+  "created_at": "2026-05-25T10:45:00Z",
+  "title": "Integrate GitHub API for Review Comments",
+  "description": "Build service that posts code review comments to GitHub PRs using the GitHub API, with support for blocking merges on failed reviews.",
+  "repo": "naoufac/naples-agency",
+  "context": {
+    "files": [
+      "github-review-service.py",
+      "config.yaml"
+    ],
+    "commands": [
+      "python github-review-service.py --test"
+    ],
+    "review_focus": "API authentication, PR comments, status checks"
+  }
+}
